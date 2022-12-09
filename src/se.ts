@@ -47,9 +47,12 @@ export class Helper {
     const execSync = child.execSync
     console.log('Run number: ' + this.currentBuild.runNumber)
     try {
-      const xmllint = execSync('sudo apt install libxml2-utils', {
-        shell: '/bin/bash'
-      })
+      const xmllint = execSync(
+        'sudo apt-get update; sudo apt install libxml2-utils',
+        {
+          shell: '/bin/bash'
+        }
+      )
 
       console.log(xmllint.toString())
     } catch (err) {

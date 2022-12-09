@@ -13637,7 +13637,7 @@ class se_Helper {
         const execSync = external_child_process_.execSync;
         console.log('Run number: ' + this.currentBuild.runNumber);
         try {
-            const xmllint = execSync('sudo apt install libxml2-utils', {
+            const xmllint = execSync('sudo apt-get update; sudo apt install libxml2-utils', {
                 shell: '/bin/bash'
             });
             console.log(xmllint.toString());
